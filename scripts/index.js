@@ -146,7 +146,7 @@ fs.emptyDir(paths.appBuild)
         }
       }).apply(webpackCompiler);
 
-      webpackCompiler.watch({}, (err, stats) => {
+      webpackCompiler.run((err, stats) => {
         if (err) {
           return reject(err);
         }
