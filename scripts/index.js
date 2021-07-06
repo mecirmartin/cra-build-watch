@@ -3,6 +3,7 @@
 process.env.NODE_ENV = 'development'; // eslint-disable-line no-process-env
 process.env.FAST_REFRESH = false;
 
+const Fs = require('fs')
 const importCwd = require('import-cwd');
 const fs = require('fs-extra');
 const path = require('path');
@@ -139,8 +140,8 @@ fs.emptyDir(paths.appBuild)
 
     return new Promise((resolve, reject) => {
       const webpackCompiler = webpack(config);
-      webpackCompiler.inputFileSystem = fs;
-      webpackCompiler.outputFileSystem = fs;
+      webpackCompiler.inputFileSystem = Fs;
+      webpackCompiler.outputFileSystem = Fs;
       new webpack.ProgressPlugin(() => {
         if (!inProgress) {
           spinner.start('Start webpack watch');
