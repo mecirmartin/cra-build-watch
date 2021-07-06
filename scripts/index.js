@@ -138,7 +138,6 @@ fs.emptyDir(paths.appBuild)
     spinner.succeed();
 
     return new Promise((resolve, reject) => {
-      console.log('toto je config', config);
       const webpackCompiler = webpack(config);
       new webpack.ProgressPlugin(() => {
         if (!inProgress) {
@@ -146,7 +145,8 @@ fs.emptyDir(paths.appBuild)
           inProgress = true;
         }
       }).apply(webpackCompiler);
-
+      
+      console.log('toto', webpackCompiler, webpackCompiler.close);
       webpackCompiler.run((err, stats) => {
         if (err) {
           return reject(err);
