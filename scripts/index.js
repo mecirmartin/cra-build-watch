@@ -139,6 +139,8 @@ fs.emptyDir(paths.appBuild)
 
     return new Promise((resolve, reject) => {
       const webpackCompiler = webpack(config);
+      webpackCompiler.inputFileSystem = fs;
+      webpackCompiler.outputFileSystem = fs;
       new webpack.ProgressPlugin(() => {
         if (!inProgress) {
           spinner.start('Start webpack watch');
