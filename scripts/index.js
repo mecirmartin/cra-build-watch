@@ -147,7 +147,7 @@ fs.emptyDir(paths.appBuild)
       }).apply(webpackCompiler);
       
       console.log('toto', webpack.close, webpackCompiler.close);
-      webpackCompiler.run((err, stats) => {
+      const something = webpackCompiler.run((err, stats) => {
         if (err) {
           return reject(err);
         }
@@ -168,9 +168,10 @@ fs.emptyDir(paths.appBuild)
           );
           console.log();
         }
-        webpackCompiler.close(err => console.error(err))
+//         webpackCompiler.close(err => console.error(err))
         return resolve();
       });
+      console.log('smthing', something)
     });
   })
   .then(() => copyPublicFolder())
