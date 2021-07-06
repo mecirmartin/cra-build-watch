@@ -146,7 +146,7 @@ fs.emptyDir(paths.appBuild)
         }
       }).apply(webpackCompiler);
       
-      console.log('toto', webpackCompiler, webpackCompiler.close);
+      console.log('toto', webpack.close, webpackCompiler.close);
       webpackCompiler.run((err, stats) => {
         if (err) {
           return reject(err);
