@@ -168,7 +168,7 @@ fs.emptyDir(paths.appBuild)
           );
           console.log();
         }
-
+        webpackCompiler.close(err => console.error(err))
         return resolve();
       });
     });
