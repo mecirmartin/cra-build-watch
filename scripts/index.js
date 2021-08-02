@@ -59,9 +59,9 @@ const env = getClientEnvironment(process.env.PUBLIC_URL || ''); // eslint-disabl
 if (major < 4) {
   config.entry = config.entry.filter(fileName => !fileName.match(/webpackHotDevClient/));
 }
-config.plugins = config.plugins.filter(
-  plugin => !(plugin instanceof webpack.HotModuleReplacementPlugin)
-);
+// config.plugins = config.plugins.filter(
+//   plugin => !(plugin instanceof webpack.HotModuleReplacementPlugin)
+// );
 
 /**
  * We also need to update the path where the different files get generated.
