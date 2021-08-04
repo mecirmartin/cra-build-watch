@@ -127,6 +127,8 @@ config.plugins[htmlPluginIndex] = new HtmlWebpackPlugin({
   template: paths.appHtml,
   filename: 'index.html',
 });
+// Minify
+config.optimization.minimize = true;
 
 spinner.succeed();
 spinner.start('Clear destination folder');
